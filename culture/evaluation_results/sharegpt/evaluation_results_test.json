@@ -1,0 +1,22 @@
+{
+  "country_dataset": {
+    "accuracy": 0.3574144486692015,
+    "correct": 94,
+    "total": 263
+  },
+  "country_value_dataset": {
+    "accuracy": 0.38783269961977185,
+    "correct": 102,
+    "total": 263
+  },
+  "rule_of_thumb_dataset": {
+    "accuracy": 0.5399239543726235,
+    "correct": 142,
+    "total": 263
+  },
+  "overall": {
+    "accuracy": 0.42839036755386567,
+    "correct": 338,
+    "total": 789
+  }
+}

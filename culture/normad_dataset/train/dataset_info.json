@@ -1,0 +1,74 @@
+{
+  "builder_name": "csv",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "norm_ad",
+  "dataset_size": 4683019,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/akhilayerukola/NormAd@311049f5610e932792672e4e13e7df62b6290336/normad_etiquette_final_data.csv": {
+      "num_bytes": 4622095,
+      "checksum": null
+    }
+  },
+  "download_size": 4622095,
+  "features": {
+    "ID": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "Country": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Background": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Axis": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Subaxis": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Value": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Rule-of-Thumb": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Story": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Explanation": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Gold Label": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 9305114,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 4683019,
+      "num_examples": 2633,
+      "dataset_name": "norm_ad"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

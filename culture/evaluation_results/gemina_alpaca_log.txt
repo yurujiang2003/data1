@@ -1,0 +1,78 @@
+INFO 03-06 06:01:11 __init__.py:190] Automatically detected platform cuda.
+INFO 03-06 06:01:13 config.py:2382] Downcasting torch.float32 to torch.bfloat16.
+INFO 03-06 06:01:22 config.py:542] This model supports multiple tasks: {'score', 'classify', 'embed', 'generate', 'reward'}. Defaulting to 'generate'.
+INFO 03-06 06:01:22 llm_engine.py:234] Initializing a V0 LLM engine (v0.7.2) with config: model='sparta_alignment/base_model', speculative_config=None, tokenizer='sparta_alignment/base_model', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=8192, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='xgrammar'), observability_config=ObservabilityConfig(otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=0, served_model_name=sparta_alignment/base_model, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=False, chunked_prefill_enabled=False, use_async_output_proc=True, disable_mm_preprocessor_cache=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"splitting_ops":[],"compile_sizes":[],"cudagraph_capture_sizes":[256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"max_capture_size":256}, use_cached_outputs=False, 
+INFO 03-06 06:01:26 cuda.py:230] Using Flash Attention backend.
+INFO 03-06 06:01:30 model_runner.py:1110] Starting to load model sparta_alignment/base_model...
+Loading safetensors checkpoint shards:   0% Completed | 0/8 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  12% Completed | 1/8 [00:01<00:08,  1.16s/it]
+Loading safetensors checkpoint shards:  25% Completed | 2/8 [00:02<00:07,  1.17s/it]
+Loading safetensors checkpoint shards:  38% Completed | 3/8 [00:03<00:06,  1.25s/it]
+Loading safetensors checkpoint shards:  50% Completed | 4/8 [00:04<00:03,  1.13it/s]
+Loading safetensors checkpoint shards:  62% Completed | 5/8 [00:05<00:02,  1.02it/s]
+Loading safetensors checkpoint shards:  75% Completed | 6/8 [00:06<00:02,  1.04s/it]
+Loading safetensors checkpoint shards:  88% Completed | 7/8 [00:07<00:01,  1.06s/it]
+Loading safetensors checkpoint shards: 100% Completed | 8/8 [00:08<00:00,  1.10s/it]
+Loading safetensors checkpoint shards: 100% Completed | 8/8 [00:08<00:00,  1.07s/it]
+
+INFO 03-06 06:01:40 model_runner.py:1115] Loading model weights took 15.9066 GB
+INFO 03-06 06:01:40 punica_selector.py:18] Using PunicaWrapperGPU.
+INFO 03-06 06:01:46 worker.py:267] Memory profiling takes 5.67 seconds
+INFO 03-06 06:01:46 worker.py:267] the current vLLM instance can use total_gpu_memory (39.38GiB) x gpu_memory_utilization (0.80) = 31.50GiB
+INFO 03-06 06:01:46 worker.py:267] model weights take 15.91GiB; non_torch_memory takes 0.09GiB; PyTorch activation peak memory takes 2.37GiB; the rest of the memory reserved for KV Cache is 13.13GiB.
+INFO 03-06 06:01:47 executor_base.py:110] # CUDA blocks: 1921, # CPU blocks: 585
+INFO 03-06 06:01:47 executor_base.py:115] Maximum concurrency for 8192 tokens per request: 3.75x
+INFO 03-06 06:01:52 model_runner.py:1434] Capturing cudagraphs for decoding. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI. If out-of-memory error occurs during cudagraph capture, consider decreasing `gpu_memory_utilization` or switching to eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+Capturing CUDA graph shapes:   0%|          | 0/35 [00:00<?, ?it/s]Capturing CUDA graph shapes:   3%|▎         | 1/35 [00:01<00:58,  1.71s/it]Capturing CUDA graph shapes:   6%|▌         | 2/35 [00:02<00:44,  1.36s/it]Capturing CUDA graph shapes:   9%|▊         | 3/35 [00:03<00:36,  1.15s/it]Capturing CUDA graph shapes:  11%|█▏        | 4/35 [00:04<00:32,  1.05s/it]Capturing CUDA graph shapes:  14%|█▍        | 5/35 [00:05<00:30,  1.01s/it]Capturing CUDA graph shapes:  17%|█▋        | 6/35 [00:06<00:28,  1.03it/s]Capturing CUDA graph shapes:  20%|██        | 7/35 [00:07<00:26,  1.06it/s]Capturing CUDA graph shapes:  23%|██▎       | 8/35 [00:08<00:25,  1.07it/s]Capturing CUDA graph shapes:  26%|██▌       | 9/35 [00:09<00:24,  1.08it/s]Capturing CUDA graph shapes:  29%|██▊       | 10/35 [00:10<00:23,  1.08it/s]Capturing CUDA graph shapes:  31%|███▏      | 11/35 [00:11<00:22,  1.08it/s]Capturing CUDA graph shapes:  34%|███▍      | 12/35 [00:11<00:20,  1.11it/s]Capturing CUDA graph shapes:  37%|███▋      | 13/35 [00:12<00:19,  1.12it/s]Capturing CUDA graph shapes:  40%|████      | 14/35 [00:13<00:18,  1.14it/s]Capturing CUDA graph shapes:  43%|████▎     | 15/35 [00:14<00:17,  1.16it/s]Capturing CUDA graph shapes:  46%|████▌     | 16/35 [00:15<00:16,  1.15it/s]Capturing CUDA graph shapes:  49%|████▊     | 17/35 [00:16<00:15,  1.15it/s]Capturing CUDA graph shapes:  51%|█████▏    | 18/35 [00:17<00:14,  1.16it/s]Capturing CUDA graph shapes:  54%|█████▍    | 19/35 [00:17<00:13,  1.17it/s]Capturing CUDA graph shapes:  57%|█████▋    | 20/35 [00:18<00:12,  1.18it/s]Capturing CUDA graph shapes:  60%|██████    | 21/35 [00:19<00:11,  1.18it/s]Capturing CUDA graph shapes:  63%|██████▎   | 22/35 [00:20<00:11,  1.18it/s]Capturing CUDA graph shapes:  66%|██████▌   | 23/35 [00:21<00:10,  1.19it/s]Capturing CUDA graph shapes:  69%|██████▊   | 24/35 [00:22<00:09,  1.20it/s]Capturing CUDA graph shapes:  71%|███████▏  | 25/35 [00:22<00:08,  1.20it/s]Capturing CUDA graph shapes:  74%|███████▍  | 26/35 [00:23<00:07,  1.19it/s]Capturing CUDA graph shapes:  77%|███████▋  | 27/35 [00:24<00:06,  1.21it/s]Capturing CUDA graph shapes:  80%|████████  | 28/35 [00:25<00:05,  1.19it/s]Capturing CUDA graph shapes:  83%|████████▎ | 29/35 [00:26<00:04,  1.20it/s]Capturing CUDA graph shapes:  86%|████████▌ | 30/35 [00:26<00:04,  1.21it/s]Capturing CUDA graph shapes:  89%|████████▊ | 31/35 [00:27<00:03,  1.21it/s]Capturing CUDA graph shapes:  91%|█████████▏| 32/35 [00:28<00:02,  1.19it/s]Capturing CUDA graph shapes:  94%|█████████▍| 33/35 [00:29<00:01,  1.18it/s]Capturing CUDA graph shapes:  97%|█████████▋| 34/35 [00:30<00:00,  1.18it/s]Capturing CUDA graph shapes: 100%|██████████| 35/35 [00:31<00:00,  1.09it/s]Capturing CUDA graph shapes: 100%|██████████| 35/35 [00:31<00:00,  1.11it/s]
+INFO 03-06 06:02:23 model_runner.py:1562] Graph capturing finished in 32 secs, took 0.37 GiB
+INFO 03-06 06:02:23 llm_engine.py:431] init engine (profile, create kv cache, warmup model) took 42.87 seconds
+
+================================================================================
+Dataset                        Accuracy   Correct    Total     
+--------------------------------------------------------------------------------
+Processing sparta_alignment/data/culture/country_dataset.json...
+WARNING 03-06 06:02:23 tokenizer.py:238] No tokenizer found in sparta_alignment/init_model/gemina_alpaca, using base model tokenizer instead. (Exception: Incorrect path_or_model_id: 'sparta_alignment/init_model/gemina_alpaca'. Please provide either the path to a local folder or the repo_id of a model on the Hub.)
+Processed prompts:   0%|          | 0/263 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]ERROR 03-06 06:02:24 utils.py:210] Error downloading the HuggingFace model
+ERROR 03-06 06:02:24 utils.py:210] Traceback (most recent call last):
+ERROR 03-06 06:02:24 utils.py:210]   File "/home/shangbin/miniconda3/envs/tin/lib/python3.11/site-packages/vllm/lora/utils.py", line 204, in get_adapter_absolute_path
+ERROR 03-06 06:02:24 utils.py:210]     local_snapshot_path = huggingface_hub.snapshot_download(
+ERROR 03-06 06:02:24 utils.py:210]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 03-06 06:02:24 utils.py:210]   File "/home/shangbin/miniconda3/envs/tin/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 106, in _inner_fn
+ERROR 03-06 06:02:24 utils.py:210]     validate_repo_id(arg_value)
+ERROR 03-06 06:02:24 utils.py:210]   File "/home/shangbin/miniconda3/envs/tin/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 154, in validate_repo_id
+ERROR 03-06 06:02:24 utils.py:210]     raise HFValidationError(
+ERROR 03-06 06:02:24 utils.py:210] huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': 'sparta_alignment/init_model/gemina_alpaca'. Use `repo_type` argument if needed.
+Processed prompts:   0%|          | 0/263 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]
+Error processing sparta_alignment/data/culture/country_dataset.json: Loading lora adapter failed: No adapter found for sparta_alignment/init_model/gemina_alpaca
+Processing sparta_alignment/data/culture/country_value_dataset.json...
+Processed prompts:   0%|          | 0/526 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]ERROR 03-06 06:02:24 utils.py:210] Error downloading the HuggingFace model
+ERROR 03-06 06:02:24 utils.py:210] Traceback (most recent call last):
+ERROR 03-06 06:02:24 utils.py:210]   File "/home/shangbin/miniconda3/envs/tin/lib/python3.11/site-packages/vllm/lora/utils.py", line 204, in get_adapter_absolute_path
+ERROR 03-06 06:02:24 utils.py:210]     local_snapshot_path = huggingface_hub.snapshot_download(
+ERROR 03-06 06:02:24 utils.py:210]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 03-06 06:02:24 utils.py:210]   File "/home/shangbin/miniconda3/envs/tin/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 106, in _inner_fn
+ERROR 03-06 06:02:24 utils.py:210]     validate_repo_id(arg_value)
+ERROR 03-06 06:02:24 utils.py:210]   File "/home/shangbin/miniconda3/envs/tin/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 154, in validate_repo_id
+ERROR 03-06 06:02:24 utils.py:210]     raise HFValidationError(
+ERROR 03-06 06:02:24 utils.py:210] huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': 'sparta_alignment/init_model/gemina_alpaca'. Use `repo_type` argument if needed.
+Processed prompts:   0%|          | 0/526 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]
+Error processing sparta_alignment/data/culture/country_value_dataset.json: Loading lora adapter failed: No adapter found for sparta_alignment/init_model/gemina_alpaca
+Processing sparta_alignment/data/culture/rule_of_thumb_dataset.json...
+Processed prompts:   0%|          | 0/789 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]ERROR 03-06 06:02:24 utils.py:210] Error downloading the HuggingFace model
+ERROR 03-06 06:02:24 utils.py:210] Traceback (most recent call last):
+ERROR 03-06 06:02:24 utils.py:210]   File "/home/shangbin/miniconda3/envs/tin/lib/python3.11/site-packages/vllm/lora/utils.py", line 204, in get_adapter_absolute_path
+ERROR 03-06 06:02:24 utils.py:210]     local_snapshot_path = huggingface_hub.snapshot_download(
+ERROR 03-06 06:02:24 utils.py:210]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 03-06 06:02:24 utils.py:210]   File "/home/shangbin/miniconda3/envs/tin/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 106, in _inner_fn
+ERROR 03-06 06:02:24 utils.py:210]     validate_repo_id(arg_value)
+ERROR 03-06 06:02:24 utils.py:210]   File "/home/shangbin/miniconda3/envs/tin/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 154, in validate_repo_id
+ERROR 03-06 06:02:24 utils.py:210]     raise HFValidationError(
+ERROR 03-06 06:02:24 utils.py:210] huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': 'sparta_alignment/init_model/gemina_alpaca'. Use `repo_type` argument if needed.
+Processed prompts:   0%|          | 0/789 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]
+Error processing sparta_alignment/data/culture/rule_of_thumb_dataset.json: Loading lora adapter failed: No adapter found for sparta_alignment/init_model/gemina_alpaca
+--------------------------------------------------------------------------------
+Overall                        0.0000    0          0         
+================================================================================
+
+All results saved to sparta_alignment/data/culture/evaluation_results/gemina_alpaca/evaluation_results_test.json
+[rank0]:[W306 06:02:25.566543547 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
